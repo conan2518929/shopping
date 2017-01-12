@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:orientation="vertical" 
+    android:gravity="center"
+    android:id="@+id/ll_one"
+    >
+
+    <TextView
+        android:id="@+id/carName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/ziti_size_seven"
+        android:drawableRight="@drawable/home_lb_jt"
+        android:text="轿车"
+        android:singleLine="true"
+        android:textColor="@color/black_two"
+        android:textSize="@dimen/ziti_size_five" />
+
+</LinearLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_two"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue_one"
+        android:paddingRight="15dp" >
+
+        <LinearLayout
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/title_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="积分抽奖"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ziti_size_nine" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cjjl"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="抽奖记录"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ziti_size_nine" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/sl"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitStart"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/bg_cj" />
+                <TextView
+                    android:id="@+id/btn_choujiang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="积分抽奖"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_choujiang"
+                    android:layout_marginBottom="7dp"
+                    />
+                
+                <TextView 
+                    android:id="@+id/now_jifen"
+                    android:layout_marginBottom="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:text="当前积分2"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="bottom|center_horizontal"
+                    />
+            </FrameLayout>
+ 			<TextView 
+ 			    android:layout_width="match_parent"
+ 			    android:layout_height="32dp"
+ 			    android:text="兑奖说明"
+ 			    android:textColor="@color/white"
+ 			    android:textSize="15sp"
+ 			    android:gravity="center_vertical"
+ 			    android:background="#dd553f"
+ 			    android:paddingLeft="15dp"
+ 			    />           
+            <TextView 
+                android:id="@+id/shuoming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#d8f2f3"
+                android:padding="15dp"
+                android:text="一等奖：500名一等奖：500名一等奖：500名一等奖：500名一等奖：500名一等奖：500名一等奖：500名一等奖：500名一等奖：500名"
+                />
+            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

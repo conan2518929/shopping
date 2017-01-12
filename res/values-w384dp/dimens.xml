@@ -1,0 +1,4 @@
+<resources>
+    <!-- 768*1280 -->
+		<dimen name="lbt_height">209dp</dimen>
+</resources>

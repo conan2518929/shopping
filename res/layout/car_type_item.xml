@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+     >
+    <ImageView 
+        android:layout_centerVertical="true"
+        android:id="@+id/img_car"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/car"
+        
+        />
+	<ImageView 
+	    android:id="@+id/right_jiao"
+	    android:layout_alignParentRight="true"
+	    android:layout_centerVertical="true"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/home_lb_jt"
+	    />
+	<TextView 
+	    android:id="@+id/tv_car"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="轿车"
+	    android:layout_centerVertical="true"
+	    android:textColor="@color/black_one"
+	    android:layout_toLeftOf="@id/right_jiao"
+	    android:textSize="@dimen/ziti_size_eight"
+	    android:layout_marginRight="8dp"
+	    />
+</RelativeLayout>

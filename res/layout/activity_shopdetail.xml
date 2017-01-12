@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/blue_one"
+        android:paddingRight="15dp" >
+
+        <LinearLayout
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/title_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="店铺详情"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ziti_size_thirteen" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_talk_list"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="30dp" >
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/home_xx" />
+
+                <Button
+                    android:id="@+id/show_talk_num"
+                    android:layout_width="20.7dp"
+                    android:layout_height="16.2dp"
+                    android:layout_gravity="right|top"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/num_pic"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="0"
+                    android:textColor="@color/blue_one"
+                    android:textSize="9sp" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="消息"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ziti_size_three" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5.5"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp" >
+
+                <TextView
+                    android:id="@+id/pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shop_detail_button"
+                    android:gravity="center"
+                    android:text="立即付款"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ziti_size_six" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/line" />
+
+            <LinearLayout
+                android:id="@+id/ll_talk"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.0"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shop_detail_sx" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="私信"
+                    android:textColor="@color/gray_ten"
+                    android:textSize="@dimen/ziti_size_six" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/line" />
+
+            <LinearLayout
+                android:id="@+id/ll_phone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shop_detail_bd" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="拨打电话"
+                    android:textColor="@color/gray_ten"
+                    android:textSize="@dimen/ziti_size_six" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_above="@id/ll"
+            android:background="@color/line" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/line"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="访问数量："
+                        android:textColor="@color/black_four"
+                        android:textSize="@dimen/ziti_size_three" />
+
+                    <TextView
+                        android:id="@+id/fw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/ziti_size_three" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical"
+                        android:text="粉丝总量："
+                        android:textColor="@color/black_four"
+                        android:textSize="@dimen/ziti_size_three" />
+
+                    <TextView
+                        android:id="@+id/total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/ziti_size_three" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#e9e6e1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/tv_fwjl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="访问记录："
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/ziti_size_three" />
+
+                    <com.car.shopping.widget.MarqueeTextView
+                        android:id="@+id/allname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:gravity="center_vertical"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/black_four"
+                        android:textSize="@dimen/ziti_size_three" />
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/lbt_height"
+                    android:gravity="center" >
+
+                    <com.car.shopping.widget.AutoPagerView
+                        android:id="@+id/auto_pagerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/shuiyin" />
+                </FrameLayout>
+				<LinearLayout
+				    android:visibility="gone"
+				    android:id="@+id/ll_show_video" 
+				    android:layout_marginTop="10dp"
+				    android:layout_width="match_parent"
+				    android:layout_height="120dp"
+				    android:orientation="vertical"
+				    android:background="#e7e5e6"
+				    android:gravity="center"
+				    >
+				    <ImageView 
+				        android:id="@+id/play"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:src="@drawable/xq_dd_sp"
+				        />
+				</LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp" >
+
+                    <TextView
+                        android:id="@+id/shopname"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/ziti_size_eight" />
+
+                    <TextView
+                        android:id="@+id/add_txl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:drawablePadding="3dp"
+                        android:drawableRight="@drawable/shop_detail_tj"
+                        android:text="添加通讯录"
+                        android:textColor="@color/home_list_item_blue"
+                        android:textSize="@dimen/ziti_size_seven"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/had_add_txl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="已添加"
+                        android:textColor="@color/home_list_item_blue"
+                        android:textSize="@dimen/ziti_size_six"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="3dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="品牌:"
+                        android:textColor="@color/home_list_item_blue"
+                        android:textSize="@dimen/ziti_size_seven" />
+
+                    <ImageView
+                        android:id="@+id/pic1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/home_lb_xfl"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/pic2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/home_lb_sl"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/pic3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/home_lb_qy"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/pic4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/home_lb_ns"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/pic5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/home_lb_ft"
+                        android:visibility="gone" />
+				<LinearLayout 
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="vertical"
+				    android:gravity="right"
+				    >
+				     <TextView
+                        android:id="@+id/fx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="分  享"
+                        android:background="#53f413"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/ziti_size_seven" />
+				</LinearLayout>
+                   
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="3dp"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="品牌:"
+                        android:textColor="@color/home_list_item_blue"
+                        android:textSize="@dimen/ziti_size_seven"
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        android:id="@+id/pic6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/home_lb_xfl"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/pic7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="15dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/home_lb_sl"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/pic8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="15dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/home_lb_qy"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/pic9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="15dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/home_lb_ns"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/pic10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="15dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/home_lb_ft"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="3dp"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="车型:"
+                        android:textColor="@color/home_list_item_blue"
+                        android:textSize="@dimen/ziti_size_seven" />
+
+                    <TextView
+                        android:id="@+id/cartype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:ellipsize="end"
+                        android:lineSpacingMultiplier="1.3"
+                        android:maxLines="4"
+                        android:textColor="@color/gray_ten"
+                        android:textSize="@dimen/ziti_size_seven" />
+                </LinearLayout>
+
+                <!-- 描述 -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/home_lb_fs"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="经营车型 "
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ziti_size_seven" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp" >
+
+                    <TextView
+                        android:id="@+id/show_miaosu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/gray_ten"
+                        android:textSize="@dimen/ziti_size_seven" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/home_lb_green"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="联系方式"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ziti_size_seven" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp" >
+
+                    <TextView
+                        android:id="@+id/tv_tel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:drawableLeft="@drawable/home_lb_dh"
+                        android:drawablePadding="3dp"
+                        android:gravity="center"
+                        android:text="电话:"
+                        android:textColor="@color/home_list_item_blue"
+                        android:textSize="@dimen/ziti_size_seven" />
+
+                    <TextView
+                        android:id="@+id/tv_phoneNum_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/tv_tel"
+                        android:gravity="center_vertical"
+                        android:text=""
+                        android:textColor="@color/gray_ten"
+                        android:textSize="@dimen/ziti_size_seven" />
+
+                    <TextView
+                        android:id="@+id/tv_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="@color/gray_ten" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_toLeftOf="@id/tv_num"
+                        android:gravity="center_vertical"
+                        android:text="拨打次数:"
+                        android:textColor="@color/gray_ten" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_tel"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/shop_detail_dd"
+                            android:drawablePadding="3dp"
+                            android:gravity="center"
+                            android:text="地址:"
+                            android:textColor="@color/home_list_item_blue"
+                            android:textSize="@dimen/ziti_size_seven" />
+
+                        <TextView
+                            android:id="@+id/address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLines="3"
+                            android:textColor="@color/gray_ten"
+                            android:textSize="@dimen/ziti_size_seven" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/home_lb_blue"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="店铺验证"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ziti_size_seven" />
+
+                <com.car.shopping.widget.FlowLayout
+                    android:id="@+id/flowlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/lb_bq_fw"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:textColor="@color/home_list_item_blue"
+                        android:textSize="@dimen/ziti_size_six"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/lb_bq_fw"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:textColor="@color/home_list_item_blue"
+                        android:textSize="@dimen/ziti_size_six"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/lb_bq_fw"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:textColor="@color/home_list_item_blue"
+                        android:textSize="@dimen/ziti_size_six"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/lb_bq_fw"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:textColor="@color/home_list_item_blue"
+                        android:textSize="@dimen/ziti_size_six"
+                        android:visibility="gone" />
+                </com.car.shopping.widget.FlowLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/home_lb_orange"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="单项产品"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ziti_size_seven" />
+
+                <TextView
+                    android:id="@+id/jianying"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lineSpacingMultiplier="1.3"
+                    android:maxLines="5"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/gray_ten"
+                    android:textSize="@dimen/ziti_size_seven" />
+                
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/home_lb_zise"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="25dp"
+                    android:text="店铺描述"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/ziti_size_seven" />
+
+                <TextView
+                    android:id="@+id/tv_miaosu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lineSpacingMultiplier="1.3"
+                    android:maxLines="5"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/gray_ten"
+                    android:textSize="@dimen/ziti_size_seven" />
+                
+                
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

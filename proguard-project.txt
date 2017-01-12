@@ -1,0 +1,86 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+# removes such information by default, so configure it to keep all of it. 
+-keepattributes Signature 
+# Gson specific classes 
+-keep class sun.misc.Unsafe { *; } 
+#-keep class com.google.gson.stream.** { *; } 
+# Application classes that will be serialized/deserialized over Gson 
+-keep class com.google.gson.examples.android.model.** { *; }
+-keep class com.car.shopping.entity.** {*;}
+
+-dontshrink
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontpreverify
+-verbose
+
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+-ignorewarnings
+-dontwarn
+-allowaccessmodification
+-dontskipnonpubliclibraryclassmembers
+-keepattributes *Annotation*
+
+-keep class com.car.shopping.activity.VinActivity {*;}
+-libraryjars libs/showapi_sdk.jar
+-libraryjars libs/javacpp.jar
+-libraryjars libs/javacv.jar
+
+-keep public class com.squareup.okhttp.OkHttpClient  
+-dontwarn com.squareup.**
+
+
+-keep class com.hyphenate.** {*;}
+-dontwarn  com.hyphenate.**
+
+
+-keep class com.baidu.** {*;}
+-keep class vi.com.** {*;}    
+-dontwarn com.baidu.**
+-dontwarn com.google.ads.**
+
+
+-keep class org.apache.http.** { *; }
+-dontwarn org.apache.http.**
+-dontwarn android.net.**
+
+-keep class com.google.android.gms.** { *; }
+-dontwarn com.google.android.gms.**
+
+-keep class com.parse.** { *; }
+
+# Keep source file names, line numbers, and Parse class/method names for easier debugging
+-keepattributes SourceFile,LineNumberTable
+-keepnames class com.parse.** { *; }
+
+# Required for Parse
+-keepattributes *Annotation*
+-keepattributes Signature
+-dontwarn com.squareup.**
+-dontwarn okio.**  
+-keep class com.tencent.mm.sdk.** {
+   *;
+}
+
+-keepattributes EnclosingMethod

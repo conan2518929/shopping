@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/blue_one"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        >
+        <LinearLayout 
+           android:id="@+id/ll_title_left" 
+           android:layout_width="wrap_content" 
+           android:layout_height="match_parent"
+           android:orientation="vertical"
+           android:gravity="center"
+            >
+
+		<ImageView
+		    android:layout_width="29dp"
+		    android:layout_height="29dp"
+		    android:src="@drawable/home_dd" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ziti_size_three"
+            />
+        </LinearLayout>
+        <LinearLayout 
+           android:id="@+id/ll_talk"
+           android:layout_alignParentRight="true"
+           android:layout_width="wrap_content" 
+           android:layout_height="match_parent"
+           android:orientation="vertical"
+           android:gravity="center"
+            >
+          <FrameLayout 
+			    android:layout_width="40dp"
+			    android:layout_height="30dp"
+			    >
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/home_xx" />
+			<Button
+			    android:id="@+id/show_talk_num" 
+			    android:layout_marginBottom="10dp"
+			    android:layout_gravity="right|top"
+			    android:layout_width="20.7dp"
+			    android:layout_height="16.2dp"
+			    android:gravity="center"
+			    android:textSize="9sp"
+			    android:text="0"
+			    android:singleLine="true"
+			    android:textColor="@color/blue_one"
+			    android:background="@drawable/num_pic"
+			    />			    
+			</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ziti_size_three"
+            android:text="消息" 
+            /> 
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:id="@+id/title_search"
+            android:layout_centerInParent="true"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView 
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="6dp"
+                android:drawableLeft="@drawable/home_search"
+                android:text="@string/home_title"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ziti_size_five"
+                />
+            <ImageView 
+                android:layout_marginTop="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home_ssk"
+                />
+        </LinearLayout>
+        
+    </RelativeLayout>
+
+    <com.car.shopping.widget.PullToRefreshListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+		android:cacheColorHint="#00000000"
+        android:scrollbars="none"       
+        >
+   </com.car.shopping.widget.PullToRefreshListView>
+    
+    
+</LinearLayout>

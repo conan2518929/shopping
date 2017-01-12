@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/com/car/shopping/app/AppContext.java=UTF-8
+encoding//src/com/car/shopping/app/AppManager.java=UTF-8
+encoding//src/com/car/shopping/utils/WXManager.java=UTF-8
+encoding//src/com/car/shopping/video/FFmpegPreviewActivity.java=UTF-8
+encoding//src/com/car/shopping/video/FFmpegRecorderActivity.java=GBK
+encoding//src/com/car/shopping/video/NewFFmpegFrameRecorder.java=UTF-8
+encoding//src/com/car/shopping/widget/AutoPagerView.java=UTF-8
+encoding//src/com/car/shopping/widget/SliderView.java=UTF-8
+encoding/<project>=GBK

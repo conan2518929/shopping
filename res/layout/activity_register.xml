@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_two"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/blue_one"
+        android:paddingRight="15dp" >
+
+        <LinearLayout
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/title_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="配配侠"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ziti_size_thirteen" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/my_zhk"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp" >
+
+
+        <EditText
+            android:id="@+id/nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请填写您的昵称"
+            android:maxLength="10"
+            android:textColor="@color/black_two"
+            android:textColorHint="@color/gray_thirteen"
+            android:textSize="@dimen/ziti_size_six" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/my_zhk"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp" >
+
+
+        <EditText
+            android:id="@+id/account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请填写您的手机号"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColor="@color/black_two"
+            android:textColorHint="@color/gray_thirteen"
+            android:textSize="@dimen/ziti_size_six" />
+    </LinearLayout>
+    <RelativeLayout 
+		android:layout_width="match_parent"        
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        >
+        <TextView 
+            android:id="@+id/hqyzm"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取验证码"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ziti_size_five"
+            android:background="@drawable/my_hqyzm"
+            android:gravity="center"
+            />
+        <EditText 
+            android:id="@+id/et_yzm"
+            android:layout_width="match_parent"
+            android:layout_toLeftOf="@id/hqyzm"
+            android:layout_height="wrap_content"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:maxLength="4"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black_two"
+            android:textColorHint="@color/gray_thirteen"
+            android:textSize="@dimen/ziti_size_six" 
+            android:background="@drawable/my_zhk"
+            />
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/my_zhk"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp" >
+
+        <EditText
+            android:id="@+id/et_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请设置6-10位数字或字母密码"
+            android:inputType="textPassword"
+            android:textColor="@color/black_two"
+            android:maxLength="10"
+            android:textColorHint="@color/gray_thirteen"
+            android:textSize="@dimen/ziti_size_six" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/my_zhk"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp" >
+
+        <EditText
+            android:id="@+id/yaoqingma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:maxLength="20"
+            android:textColor="@color/black_two"
+            android:textColorHint="@color/gray_thirteen"
+            android:textSize="@dimen/ziti_size_six" />
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/my_bigbutton"
+        android:gravity="center"
+        android:text="注册"
+        android:textColor="@color/white"
+        android:textSize="@dimen/ziti_size_seven" />
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        >
+        <ImageView 
+            android:id="@+id/img_choose"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/my_gx"
+            android:layout_gravity="center_vertical"
+            />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="已阅读并同意"
+             android:gravity="center_vertical"
+            android:textSize="@dimen/ziti_size_three"
+            android:textColor="@color/black_two"
+            />
+        <TextView 
+            android:id="@+id/xieyi"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="配配侠隐私协议"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/ziti_size_three"
+            android:textColor="@color/home_list_item_blue"
+            />
+    </LinearLayout>
+    
+</LinearLayout>

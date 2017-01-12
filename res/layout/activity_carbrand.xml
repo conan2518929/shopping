@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/blue_one"
+        android:paddingRight="15dp" >
+
+        <LinearLayout
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/title_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="车品牌"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ziti_size_thirteen" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_talk_list"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <FrameLayout 
+			    android:layout_width="40dp"
+			    android:layout_height="30dp"
+			    >
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/home_xx" />
+			<Button
+			    android:id="@+id/show_talk_num" 
+			    android:layout_marginBottom="10dp"
+			    android:layout_gravity="right|top"
+			    android:layout_width="20.7dp"
+			    android:layout_height="16.2dp"
+			    android:text="0"
+			    android:gravity="center"
+			    android:textSize="9sp"
+			    android:singleLine="true"
+			    android:textColor="@color/blue_one"
+			    android:background="@drawable/num_pic"
+			    />			    
+			</FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="消息"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ziti_size_three" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_title_search"
+        android:paddingBottom="15dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="15dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/title_search_bg"
+            android:orientation="horizontal"
+            android:paddingRight="10dp" >
+
+            <ImageView
+                android:id="@+id/btn_search"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/home_search" />
+
+            <EditText
+                android:id="@+id/search_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@id/btn_search"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/search_cartype"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white_one"
+                android:textSize="@dimen/ziti_size_five" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_six" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6.3"
+                android:orientation="vertical" >
+
+                <ListView
+                    android:id="@+id/lv_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:dividerHeight="0.5dp"
+            		android:divider="@color/gray_four"
+                    android:scrollbars="none" />
+                
+            </LinearLayout>
+			
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.7"
+                android:orientation="vertical" >
+
+                <ListView
+                    android:id="@+id/lv_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:dividerHeight="0.5dp"
+            		android:divider="@color/gray_four"
+                    android:scrollbars="none" />
+                
+            </LinearLayout>
+        </LinearLayout>
+         <ListView
+            android:id="@+id/lv"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            android:scrollbars="none" />
+    </RelativeLayout>
+
+</LinearLayout>

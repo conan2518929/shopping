@@ -1,0 +1,462 @@
+# view res/layout/ease_emojicon.xml #generated:9
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view res/layout/ease_chat_message_list.xml #generated:6
+# view res/layout/em_fragment_groups.xml #generated:29
+# view res/layout/em_fragment_robots.xml #generated:33
+-keep class android.support.v4.widget.SwipeRefreshLayout { <init>(...); }
+
+# view AndroidManifest.xml #generated:508
+-keep class com.baidu.location.f { <init>(...); }
+
+# view res/layout/ease_activity_baidumap.xml #generated:43
+-keep class com.baidu.mapapi.map.MapView { <init>(...); }
+
+# view AndroidManifest.xml #generated:76
+-keep class com.car.shopping.activity.AboutActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:118
+-keep class com.car.shopping.activity.AddressActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:223
+-keep class com.car.shopping.activity.AlertDialogActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:218
+-keep class com.car.shopping.activity.CancelActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:158
+-keep class com.car.shopping.activity.CarBrandActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:148
+-keep class com.car.shopping.activity.CarTypeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:128
+-keep class com.car.shopping.activity.ChouJiangActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:198
+-keep class com.car.shopping.activity.ContactsListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:203
+-keep class com.car.shopping.activity.ContactsListOneActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:133
+-keep class com.car.shopping.activity.ExchangeRecordActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:153
+-keep class com.car.shopping.activity.FindByTypeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:183
+-keep class com.car.shopping.activity.FindPwdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:88
+-keep class com.car.shopping.activity.HDShopDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:70
+-keep class com.car.shopping.activity.IntegralMallActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:108
+-keep class com.car.shopping.activity.InteractiveActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:123
+-keep class com.car.shopping.activity.JiFenDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:98
+-keep class com.car.shopping.activity.JiFenRuleActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:178
+-keep class com.car.shopping.activity.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:62
+-keep class com.car.shopping.activity.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:233
+-keep class com.car.shopping.activity.PayWXActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:138
+-keep class com.car.shopping.activity.RecommendActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:188
+-keep class com.car.shopping.activity.RegisterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:103
+-keep class com.car.shopping.activity.ReleaseActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:213
+-keep class com.car.shopping.activity.ResultShopLisOnetActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:208
+-keep class com.car.shopping.activity.ResultShopListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:93
+-keep class com.car.shopping.activity.RuleActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:143
+-keep class com.car.shopping.activity.SearchTotalActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:193
+-keep class com.car.shopping.activity.SetPwdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:163
+-keep class com.car.shopping.activity.ShopDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:246
+-keep class com.car.shopping.activity.ShowImageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:173
+-keep class com.car.shopping.activity.TalkShopDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:82
+-keep class com.car.shopping.activity.UserNumberActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:168
+-keep class com.car.shopping.activity.VideoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:113
+-keep class com.car.shopping.activity.VinActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:27
+-keep class com.car.shopping.activity.WelcomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:21
+-keep class com.car.shopping.app.AppContext { <init>(...); }
+
+# view AndroidManifest.xml #generated:453
+-keep class com.car.shopping.receiver.GCMPushBroadCast { <init>(...); }
+
+# view AndroidManifest.xml #generated:429
+-keep class com.car.shopping.receiver.StartServiceReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:228
+-keep class com.car.shopping.talk.main.PeopleListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:314
+-keep class com.car.shopping.talk.ui.BlacklistActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:262
+-keep class com.car.shopping.talk.ui.ChatActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:296
+-keep class com.car.shopping.talk.ui.ContextMenuActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:400
+-keep class com.car.shopping.talk.ui.DiagnoseActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:289
+-keep class com.car.shopping.talk.ui.ForwardMessageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:357
+-keep class com.car.shopping.talk.ui.GroupBlacklistActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:270
+-keep class com.car.shopping.talk.ui.GroupDetailsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:362
+-keep class com.car.shopping.talk.ui.GroupSearchMessageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:351
+-keep class com.car.shopping.talk.ui.GroupSimpleDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:387
+-keep class com.car.shopping.talk.ui.ImageGridActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:254
+-keep class com.car.shopping.talk.ui.LianXiRenListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:283
+-keep class com.car.shopping.talk.ui.NewFriendsMsgActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:408
+-keep class com.car.shopping.talk.ui.OfflinePushNickActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:328
+-keep class com.car.shopping.talk.ui.PublicChatRoomsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:321
+-keep class com.car.shopping.talk.ui.PublicGroupsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:369
+-keep class com.car.shopping.talk.ui.PublicGroupsSeachActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:393
+-keep class com.car.shopping.talk.ui.RecorderVideoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:415
+-keep class com.car.shopping.talk.ui.RobotsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:422
+-keep class com.car.shopping.talk.ui.UserProfileActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:343
+-keep class com.car.shopping.talk.ui.VideoCallActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:336
+-keep class com.car.shopping.talk.ui.VoiceCallActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:374
+-keep class com.car.shopping.talk.ui.ui.EditActivity { <init>(...); }
+
+# view res/layout/em_contacts_header.xml #generated:15
+# view res/layout/em_contacts_header.xml #generated:22
+# view res/layout/em_contacts_header.xml #generated:29
+# view res/layout/em_contacts_header.xml #generated:8
+-keep class com.car.shopping.talk.widget.ContactItemView { <init>(...); }
+
+# view res/layout/em_activity_video_call.xml #generated:40
+# view res/layout/em_activity_voice_call.xml #generated:31
+-keep class com.car.shopping.talk.widget.MyChronometer { <init>(...); }
+
+# view res/layout/em_choose_griditem.xml #generated:12
+-keep class com.car.shopping.talk.widget.RecyclingImageView { <init>(...); }
+
+# view res/layout/activity_mall.xml #generated:194
+# view res/layout/activity_release.xml #generated:155
+# view res/layout/item_hudong.xml #generated:66
+# view res/layout/item_myhudong.xml #generated:74
+-keep class com.car.shopping.utils.MyGridView { <init>(...); }
+
+# view res/layout/item_gv_pl.xml #generated:14
+# view res/layout/item_gv_pl.xml #generated:6
+# view res/layout/item_gv_pl_show.xml #generated:7
+-keep class com.car.shopping.utils.MyImageView { <init>(...); }
+
+# view AndroidManifest.xml #generated:51
+-keep class com.car.shopping.video.FFmpegPreviewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:45
+-keep class com.car.shopping.video.FFmpegRecorderActivity { <init>(...); }
+
+# view res/layout/activity_recorder.xml #generated:42
+-keep class com.car.shopping.video.ProgressView { <init>(...); }
+
+# view res/layout/activity_mall.xml #generated:108
+# view res/layout/activity_shopdetail.xml #generated:278
+# view res/layout/home_add_listview.xml #generated:12
+-keep class com.car.shopping.widget.AutoPagerView { <init>(...); }
+
+# view res/layout/activity_about.xml #generated:57
+# view res/layout/activity_hd_shop.xml #generated:56
+# view res/layout/activity_hudong.xml #generated:66
+# view res/layout/fragment_my.xml #generated:95
+-keep class com.car.shopping.widget.CircleImageView { <init>(...); }
+
+# view res/layout/activity_about.xml #generated:248
+# view res/layout/activity_hd_shop.xml #generated:182
+# view res/layout/activity_hudong.xml #generated:222
+-keep class com.car.shopping.widget.ContainsEmojiEditText { <init>(...); }
+
+# view res/layout/activity_search_total.xml #generated:129
+# view res/layout/activity_shopdetail.xml #generated:670
+-keep class com.car.shopping.widget.FlowLayout { <init>(...); }
+
+# view res/layout/image_detail_pager.xml #generated:10
+-keep class com.car.shopping.widget.HackyViewPager { <init>(...); }
+
+# view res/layout/activity_shopdetail.xml #generated:256
+# view res/layout/home_add_listview.xml #generated:39
+-keep class com.car.shopping.widget.MarqueeTextView { <init>(...); }
+
+# view res/layout/activity_recommend.xml #generated:203
+# view res/layout/activity_record.xml #generated:58
+# view res/layout/item_hudong.xml #generated:191
+# view res/layout/item_myhudong.xml #generated:199
+-keep class com.car.shopping.widget.MyListView { <init>(...); }
+
+# view res/layout/activity_about.xml #generated:264
+# view res/layout/activity_hd_shop.xml #generated:198
+# view res/layout/activity_hudong.xml #generated:238
+# view res/layout/activity_ispaylv.xml #generated:87
+# view res/layout/activity_user_number.xml #generated:44
+# view res/layout/fragment_home.xml #generated:105
+-keep class com.car.shopping.widget.PullToRefreshListView { <init>(...); }
+
+# view res/layout/activity_contacts.xml #generated:85
+# view res/layout/activity_contacts_one.xml #generated:89
+# view res/layout/fragment_addressbook.xml #generated:114
+# view res/layout/fragment_addressbook.xml #generated:127
+-keep class com.car.shopping.widget.SilderListView { <init>(...); }
+
+# view AndroidManifest.xml #generated:56
+-keep class com.car.shopping.wxapi.WXEntryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:491
+-keep class com.hyphenate.chat.EMChatService { <init>(...); }
+
+# view AndroidManifest.xml #generated:439
+-keep class com.hyphenate.chat.EMGCMBroadcastReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:449
+-keep class com.hyphenate.chat.EMGCMListenerService { <init>(...); }
+
+# view AndroidManifest.xml #generated:472
+-keep class com.hyphenate.chat.EMMipushReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:495
+-keep class com.hyphenate.chat.EMMonitorReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:276
+-keep class com.hyphenate.easeui.ui.EaseBaiduMapActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:302
+-keep class com.hyphenate.easeui.ui.EaseShowBigImageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:308
+-keep class com.hyphenate.easeui.ui.EaseShowNormalFileActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:380
+-keep class com.hyphenate.easeui.ui.EaseShowVideoActivity { <init>(...); }
+
+# view res/layout/ease_widget_chat_input_menu.xml #generated:29
+-keep class com.hyphenate.easeui.widget.EaseChatExtendMenu { <init>(...); }
+
+# view res/layout/ease_fragment_chat.xml #generated:34
+-keep class com.hyphenate.easeui.widget.EaseChatInputMenu { <init>(...); }
+
+# view res/layout/ease_fragment_chat.xml #generated:21
+-keep class com.hyphenate.easeui.widget.EaseChatMessageList { <init>(...); }
+
+# view res/layout/ease_layout_chat_primary_menu.xml #generated:2
+-keep class com.hyphenate.easeui.widget.EaseChatPrimaryMenu { <init>(...); }
+
+# view res/layout/ease_fragment_contact_list.xml #generated:24
+-keep class com.hyphenate.easeui.widget.EaseContactList { <init>(...); }
+
+# view res/layout/ease_fragment_conversation_list.xml #generated:29
+-keep class com.hyphenate.easeui.widget.EaseConversationList { <init>(...); }
+
+# view res/layout/em_activity_group_details.xml #generated:57
+-keep class com.hyphenate.easeui.widget.EaseExpandGridView { <init>(...); }
+
+# view res/layout/ease_widget_contact_list.xml #generated:17
+# view res/layout/em_activity_group_pick_contacts.xml #generated:64
+# view res/layout/em_activity_pick_contact_no_checkbox.xml #generated:42
+-keep class com.hyphenate.easeui.widget.EaseSidebar { <init>(...); }
+
+# view res/layout/em_activity_group_details.xml #generated:281
+# view res/layout/em_fragment_conversation_settings.xml #generated:101
+# view res/layout/em_fragment_conversation_settings.xml #generated:134
+# view res/layout/em_fragment_conversation_settings.xml #generated:181
+# view res/layout/em_fragment_conversation_settings.xml #generated:311
+# view res/layout/em_fragment_conversation_settings.xml #generated:336
+# view res/layout/em_fragment_conversation_settings.xml #generated:361
+# view res/layout/em_fragment_conversation_settings.xml #generated:387
+# view res/layout/em_fragment_conversation_settings.xml #generated:68
+-keep class com.hyphenate.easeui.widget.EaseSwitchButton { <init>(...); }
+
+# view res/layout/ease_fragment_chat.xml #generated:9
+# view res/layout/ease_fragment_contact_list.xml #generated:9
+# view res/layout/ease_fragment_conversation_list.xml #generated:9
+# view res/layout/em_fragment_conversation_settings.xml #generated:9
+-keep class com.hyphenate.easeui.widget.EaseTitleBar { <init>(...); }
+
+# view res/layout/ease_fragment_chat.xml #generated:26
+-keep class com.hyphenate.easeui.widget.EaseVoiceRecorderView { <init>(...); }
+
+# view res/layout/ease_widget_emojicon.xml #generated:15
+-keep class com.hyphenate.easeui.widget.emojicon.EaseEmojiconIndicatorView { <init>(...); }
+
+# view res/layout/ease_layout_emojicon_menu.xml #generated:2
+-keep class com.hyphenate.easeui.widget.emojicon.EaseEmojiconMenu { <init>(...); }
+
+# view res/layout/ease_widget_emojicon.xml #generated:9
+-keep class com.hyphenate.easeui.widget.emojicon.EaseEmojiconPagerView { <init>(...); }
+
+# view res/layout/ease_widget_emojicon.xml #generated:28
+-keep class com.hyphenate.easeui.widget.emojicon.EaseEmojiconScrollTabBar { <init>(...); }
+
+# view res/layout/ease_activity_show_big_image.xml #generated:8
+-keep class com.hyphenate.easeui.widget.photoview.EasePhotoView { <init>(...); }
+
+# view res/layout/em_activity_video_call.xml #generated:108
+-keep class com.hyphenate.media.EMLocalSurfaceView { <init>(...); }
+
+# view res/layout/em_activity_video_call.xml #generated:8
+-keep class com.hyphenate.media.EMOppositeSurfaceView { <init>(...); }
+
+# view AndroidManifest.xml #generated:468
+-keep class com.xiaomi.mipush.sdk.MessageHandleService { <init>(...); }
+
+# view AndroidManifest.xml #generated:464
+-keep class com.xiaomi.mipush.sdk.PushMessageHandler { <init>(...); }
+
+# onClick res/layout/em_activity_add_contact.xml #generated:83
+-keepclassmembers class * { *** addContact(...); }
+
+# onClick res/layout/em_activity_group_simle_details.xml #generated:121
+-keepclassmembers class * { *** addToGroup(...); }
+
+# onClick res/layout/ease_commom_back_btn.xml #generated:2
+# onClick res/layout/em_activity_edit.xml #generated:13
+# onClick res/layout/em_activity_group_blacklist.xml #generated:14
+# onClick res/layout/em_activity_group_details.xml #generated:14
+# onClick res/layout/em_activity_group_pick_contacts.xml #generated:14
+# onClick res/layout/em_activity_new_group.xml #generated:14
+-keepclassmembers class * { *** back(...); }
+
+# onClick res/layout/em_logout_actionsheet.xml #generated:41
+-keepclassmembers class * { *** cancel(...); }
+
+# onClick res/layout/activity_rule.xml #generated:45
+-keepclassmembers class * { *** clear(...); }
+
+# onClick res/layout/em_context_menu_for_text.xml #generated:10
+-keepclassmembers class * { *** copy(...); }
+
+# onClick res/layout/em_context_menu_for_image.xml #generated:28
+# onClick res/layout/em_context_menu_for_location.xml #generated:10
+# onClick res/layout/em_context_menu_for_text.xml #generated:28
+# onClick res/layout/em_context_menu_for_video.xml #generated:16
+# onClick res/layout/em_context_menu_for_voice.xml #generated:16
+-keepclassmembers class * { *** delete(...); }
+
+# onClick res/layout/em_activity_public_groups_search.xml #generated:51
+-keepclassmembers class * { *** enterToDetails(...); }
+
+# onClick res/layout/em_activity_group_details.xml #generated:336
+-keepclassmembers class * { *** exitDeleteGroup(...); }
+
+# onClick res/layout/em_activity_group_details.xml #generated:323
+-keepclassmembers class * { *** exitGroup(...); }
+
+# onClick res/layout/em_context_menu_for_image.xml #generated:45
+# onClick res/layout/em_context_menu_for_text.xml #generated:44
+-keepclassmembers class * { *** forward(...); }
+
+# onClick res/layout/em_activity_login.xml #generated:112
+-keepclassmembers class * { *** login(...); }
+
+# onClick res/layout/em_logout_actionsheet.xml #generated:26
+-keepclassmembers class * { *** logout(...); }
+
+# onClick res/layout/jubao_tishi.xml #generated:51
+# onClick res/layout/jubao_tishi.xml #generated:68
+-keepclassmembers class * { *** onClick(...); }
+
+# onClick res/layout/em_activity_main.xml #generated:23
+# onClick res/layout/em_activity_main.xml #generated:58
+# onClick res/layout/em_activity_main.xml #generated:88
+-keepclassmembers class * { *** onTabClicked(...); }
+
+# onClick res/layout/em_activity_login.xml #generated:97
+# onClick res/layout/em_activity_register.xml #generated:127
+-keepclassmembers class * { *** register(...); }
+
+# onClick res/layout/em_activity_edit.xml #generated:37
+# onClick res/layout/em_activity_group_pick_contacts.xml #generated:37
+# onClick res/layout/em_activity_new_group.xml #generated:37
+-keepclassmembers class * { *** save(...); }
+
+# onClick res/layout/em_activity_public_groups.xml #generated:33
+-keepclassmembers class * { *** search(...); }
+
+# onClick res/layout/em_activity_add_contact.xml #generated:26
+-keepclassmembers class * { *** searchContact(...); }
+
+# onClick res/layout/em_activity_public_groups_search.xml #generated:26
+-keepclassmembers class * { *** searchGroup(...); }
+
+# onClick res/layout/ease_activity_baidumap.xml #generated:28
+-keepclassmembers class * { *** sendLocation(...); }
+
+# onClick res/layout/em_activity_black_list.xml #generated:44
+-keepclassmembers class * { *** toGroupDetails(...); }
+
