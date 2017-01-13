@@ -135,7 +135,10 @@ public class HomeFragment extends BaseFragment implements BaseInterfaces, OnClic
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		layoutView = inflater.inflate(R.layout.fragment_home, container, false);
 		initViews();
+		address.setText(AppContext.imp_SharedPref.getSharePrefString(SharedPrefConstant.CHOOSE_CITY_NAME, "…Ú—Ù"));
+		AppContext.imp_SharedPref.putSharePrefString(SharedPrefConstant.CHOOSE_CITY,AppContext.imp_SharedPref.getSharePrefString(SharedPrefConstant.CHOOSE_CITY, "210100"));
 		initData();
+		
 		return layoutView;
 	}
 
@@ -343,7 +346,8 @@ public class HomeFragment extends BaseFragment implements BaseInterfaces, OnClic
 				AppContext.imp_SharedPref.putSharePrefString(SharedPrefConstant.RULE, system_info.getTrade_rule());
 				
 				address.setText(AppContext.imp_SharedPref.getSharePrefString(SharedPrefConstant.CHOOSE_CITY_NAME, "…Ú—Ù"));
-
+				
+				
 				if (!isOne) {
 					isOne = true;
 					int vCode = Utils.getVersionCode(getActivity());

@@ -596,7 +596,7 @@ public class ResultShopLisOnetActivity extends BaseActivity {
 			@Override
 			protected Map<String, String> getParams() throws AuthFailureError {
 				Map<String, String> params = new HashMap<String, String>();
-				String cityId = AppContext.imp_SharedPref.getSharePrefString(SharedPrefConstant.CHOOSE_CITY, "	");
+				String cityId = AppContext.imp_SharedPref.getSharePrefString(SharedPrefConstant.CHOOSE_CITY, "210100");
 				params.put("city_id", cityId);
 				params.put("search_content", name);
 				System.out.println("name="+name);

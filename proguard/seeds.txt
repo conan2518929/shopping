@@ -1,5 +1,4 @@
 android.net.http.RequestHandle: void cancel()
-android.support.annotation.Keep
 android.support.v4.animation.DonutAnimatorCompatProvider$DonutFloatValueAnimator: void cancel()
 android.support.v4.animation.HoneycombMr1AnimatorCompatProvider$HoneycombValueAnimatorCompat: void cancel()
 android.support.v4.animation.ValueAnimatorCompat: void cancel()
@@ -8848,7 +8847,6 @@ com.car.shopping.activity.VinActivity$1: void onClick(android.view.View)
 com.car.shopping.activity.VinActivity$2: void onClick(android.view.View)
 com.car.shopping.activity.WelcomeActivity
 com.car.shopping.activity.WelcomeActivity: WelcomeActivity()
-com.car.shopping.activity.WelcomeActivity: void login(java.lang.String,java.lang.String)
 com.car.shopping.adapter.AboutCommentAdapter$Clickable: void onClick(android.view.View)
 com.car.shopping.adapter.AboutCommentAdapter$CommentClickListener: void onClick(android.view.View)
 com.car.shopping.adapter.AddressBook2Adapter$MyClickListener: void onClick(android.view.View)
