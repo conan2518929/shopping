@@ -80,7 +80,7 @@ import com.hyphenate.chat.EMTextMessageBody;
 public class ResultShopLisOnetActivity extends BaseActivity {
 
 	private LinearLayout back, ll;
-	private TextView add_all, tv_send;
+	private TextView add_all, tv_send,shopnum;
 	private String name = "";
 	private List<RecommendShopsInfo> lists;
 	private List<RecommendShopsInfo> lists_copy;
@@ -138,6 +138,7 @@ public class ResultShopLisOnetActivity extends BaseActivity {
 		collection = getView(R.id.collection);
 		verification = getView(R.id.verification);
 		video = getView(R.id.video);
+		shopnum = getView(R.id.shopnum);
 	}
 
 	@Override
@@ -630,6 +631,7 @@ public class ResultShopLisOnetActivity extends BaseActivity {
 				if (lists != null) {
 					num = lists.size();
 					if (num > 0) {
+						shopnum.setText("商家数目:"+lists.size());
 						adapter = new ResultShopListAdapter(ResultShopLisOnetActivity.this, lists, mListener);
 						lv.setAdapter(adapter);
 					} else {
