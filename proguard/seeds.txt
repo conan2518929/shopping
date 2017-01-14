@@ -7842,6 +7842,7 @@ com.car.shopping.R$id: int shop_address
 com.car.shopping.R$id: int shop_detail
 com.car.shopping.R$id: int shop_tx
 com.car.shopping.R$id: int shopname
+com.car.shopping.R$id: int shopnum
 com.car.shopping.R$id: int showFL
 com.car.shopping.R$id: int show_miaosu
 com.car.shopping.R$id: int show_talk_num
@@ -8822,7 +8823,7 @@ com.car.shopping.activity.UserNumberActivity: UserNumberActivity()
 com.car.shopping.activity.UserNumberActivity$1: void onClick(android.view.View)
 com.car.shopping.activity.VideoActivity
 com.car.shopping.activity.VideoActivity: VideoActivity()
-com.car.shopping.activity.VideoActivity$2: void onClick(android.view.View)
+com.car.shopping.activity.VideoActivity$4: void onClick(android.view.View)
 com.car.shopping.activity.VinActivity
 com.car.shopping.activity.VinActivity: android.widget.LinearLayout back
 com.car.shopping.activity.VinActivity: android.widget.Button chaxun
