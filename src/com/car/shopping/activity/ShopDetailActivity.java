@@ -460,23 +460,17 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 		switch (v.getId()) {
 		case R.id.btn_callback://拨打回拨电话
 			String content = callback.getText().toString().trim();
-			
-			String url = "http://api.id98.cn/api/v2/callback?appkey=9e0bfd61e94319714420d5de3b01de0a&phone="+
-					content+"&call=15142096690&phoneShow=1&callShow=1";
-			
-//			if(content.length() > 0){
-//				if(baseInfo != null && baseInfo.getService_tel() !=null){
-//					if(baseInfo.getService_tel().length() == 0){
-//						Utils.showText(ShopDetailActivity.this,"该商家没有设置拨打电话...");
-//					}else{
-//						callBack(content,baseInfo.getService_tel());
-//					}
-//				}
-//			}else{
-//				Utils.showText(ShopDetailActivity.this,"请输入您的11位手机号...");
-//			}
-			
-			callBack(url);
+			if(content.length() > 0){
+				if(baseInfo != null && baseInfo.getService_tel() !=null){
+					if(baseInfo.getService_tel().length() == 0){
+						Utils.showText(ShopDetailActivity.this,"该商家没有设置拨打电话...");
+					}else{
+						callBack(content,baseInfo.getService_tel());
+					}
+				}
+			}else{
+				Utils.showText(ShopDetailActivity.this,"请输入您的11位手机号...");
+			}
 			break;
 		case R.id.fx:
 			if (isShow) {
@@ -1091,10 +1085,10 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 	/**
 	 * 回拨打电话
 	 * */
-	private void callBack(String url) {
+	private void callBack(final String myPhone,final String yourPhone) {
 		
 		AppContext.getInstance().cancelPendingRequests(TAG);
-		StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+		StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://api.id98.cn/api/v2/callback", new Response.Listener<String>() {
 
 			@Override
 			public void onResponse(String result) {
@@ -1113,7 +1107,16 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 				dismissLoadingDialog();
 				Utils.showText(ShopDetailActivity.this, "网络访问失败");
 			}
-		});
+		}){
+			@Override
+			protected Map<String, String> getParams() throws AuthFailureError {
+				Map<String, String> params = new HashMap<String, String>();
+				params.put("appkey", "9e0bfd61e94319714420d5de3b01de0a");
+				params.put("phone", myPhone);
+				params.put("call", yourPhone);
+				return params;
+			}
+		};
 		AppContext.getInstance().addToRequestQueue(stringRequest, TAG);
 	}
 	
