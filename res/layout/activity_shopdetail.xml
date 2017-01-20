@@ -271,6 +271,7 @@
                 </LinearLayout>
 
                 <FrameLayout
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/lbt_height"
                     android:gravity="center" >
@@ -575,7 +576,54 @@
                     android:text="联系方式"
                     android:textColor="@color/white"
                     android:textSize="@dimen/ziti_size_seven" />
-
+				<TextView 
+				    android:layout_width="match_parent"
+				    android:layout_height="30dp"
+				    android:background="#ff0000"
+				    android:layout_marginLeft="15dp"
+				    android:layout_marginRight="15dp"
+				    android:textColor="@color/white"
+				    android:textSize="15sp"
+				    android:text="输入电话号回拨功能"
+				    android:gravity="center_vertical"
+				    android:paddingLeft="10dp"
+				    android:textStyle="bold"
+				    />
+				
+				<RelativeLayout 
+				    android:layout_width="match_parent"
+				    android:layout_marginLeft="15dp"
+				    android:layout_marginRight="15dp"
+				    android:layout_height="wrap_content"
+				    android:paddingTop="3dp"
+				    android:paddingBottom="3dp"
+				    >
+				    <Button 
+				        android:id="@+id/btn_callback"
+				        android:layout_width="wrap_content"
+				        android:layout_height="40dp"
+				        android:paddingLeft="10dp"
+				        android:paddingRight="10dp"
+				        android:background="@color/home_list_item_blue"
+				        android:text="免费接听"
+				        android:textSize="14sp"
+				        android:textColor="@color/white"
+				        android:layout_alignParentRight="true"
+				        />
+				    <EditText 
+				        android:id="@+id/callback"
+				        android:paddingLeft="10dp"
+				        android:layout_width="match_parent"
+				        android:layout_height="40dp"
+				        android:textSize="14sp"
+				        android:inputType="number"
+				        android:hint="请输入您的电话号码"
+				        android:layout_toLeftOf="@id/btn_callback"
+				        android:layout_marginRight="20dp"
+				        android:background="@drawable/my_zhk"
+				        android:maxLines="15"
+				        />
+				</RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
