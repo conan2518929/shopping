@@ -30,6 +30,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -92,14 +93,14 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 	private FlowLayout flowlayout;
 	private TextView tv1, tv2, tv3, tv4;
 	private String numPhone = "";
-	private Button show_talk_num;
+	private Button show_talk_num,btn_callback;
 
 	private BaseTalkNickNameInfo baseTalkNickName;
 	private List<TalkNickNameInfo> data;
 	private Map<String, String> map = UtilMap.getInstance().init();
 
 	private TextView fx;
-	private String[] arr = new String[] { "·ÖÏíµ½ÅóÓÑÈ¦", "·ÖÏí¸øºÃÓÑ" };
+	private String[] arr = new String[] { "åˆ†äº«åˆ°æœ‹å‹åœˆ", "åˆ†äº«ç»™å¥½å‹" };
 	private String[]images ;
 	
 	private MarqueeTextView fangke;
@@ -109,6 +110,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 	private TelephonyManager manager ;
 	private int time = 0;
 	
+	private EditText callback;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -159,13 +161,16 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 		total = getView(R.id.total);
 		ll_show_video = getView(R.id.ll_show_video);
 		play = getView(R.id.play);
+		btn_callback = getView(R.id.btn_callback);
+		callback = getView(R.id.callback);
+		
 	}
 
 	@Override
 	public void initData() {
-		//»ñÈ¡µç»°·şÎñ
+		//è·å–ç”µè¯æœåŠ¡
         manager = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-        // ÊÖ¶¯×¢²á¶ÔPhoneStateListenerÖĞµÄlisten_call_state×´Ì¬½øĞĞ¼àÌı
+        // æ‰‹åŠ¨æ³¨å†Œå¯¹PhoneStateListenerä¸­çš„listen_call_stateçŠ¶æ€è¿›è¡Œç›‘å¬
         manager.listen(new MyPhoneStateListener(), PhoneStateListener.LISTEN_CALL_STATE);
 		id = getIntent().getExtras().getString("shop_id");
 		lunbotu = new ArrayList<>();
@@ -174,6 +179,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 		tags = new ArrayList<>();
 		data = new ArrayList<>();
 		initGallery();
+		btn_callback.setOnClickListener(this);
 		pay.setOnClickListener(this);
 		fx.setOnClickListener(this);
 		back.setOnClickListener(this);
@@ -192,7 +198,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 		}
 	}
 /**
- *  ·ÃÎÊ³õÊ¼»¯Êı¾İÇ° µÇÂ¼µÄÊ±ºòµ÷ÓÃ½Ó¿Ú
+ *  è®¿é—®åˆå§‹åŒ–æ•°æ®å‰ ç™»å½•çš„æ—¶å€™è°ƒç”¨æ¥å£
  * */
 	private void getHasLogin() {
 		AppContext.getInstance().cancelPendingRequests(TAG);
@@ -210,7 +216,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 					@Override
 					public void onErrorResponse(VolleyError volleyError) {
 						dismissLoadingDialog();
-						Utils.showText(ShopDetailActivity.this, "ÍøÂç·ÃÎÊÊ§°Ü");
+						Utils.showText(ShopDetailActivity.this, "ç½‘ç»œè®¿é—®å¤±è´¥");
 					}
 				}) {
 			@Override
@@ -258,7 +264,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 					public void onResponse(String result) {
 						try {
 							JSONObject json = new JSONObject(result);
-							System.out.println("ÉÌ¼ÒÏêÇé="+json.toString());
+							System.out.println("å•†å®¶è¯¦æƒ…="+json.toString());
 						} catch (JSONException e) {
 							e.printStackTrace();
 						}
@@ -270,7 +276,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 					@Override
 					public void onErrorResponse(VolleyError volleyError) {
 						dismissLoadingDialog();
-						Utils.showText(ShopDetailActivity.this, "ÍøÂç·ÃÎÊÊ§°Ü");
+						Utils.showText(ShopDetailActivity.this, "ç½‘ç»œè®¿é—®å¤±è´¥");
 					}
 				}) {
 			@Override
@@ -297,8 +303,8 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 				num = lunbotu.size();
 				System.out.println("num = lunbotu.size()=="+lunbotu.size());
 				ll_show_video.setVisibility(View.GONE);
-				fangke.setText(baseInfo.getVisitors_str());//·Ã¿ÍÃû×Ö
-				tv_phoneNum_one.setText(baseInfo.getService_tel());//ÏÔÊ¾400µç»°
+				fangke.setText(baseInfo.getVisitors_str());//è®¿å®¢åå­—
+				tv_phoneNum_one.setText(baseInfo.getService_tel());//æ˜¾ç¤º400ç”µè¯
 				if(baseInfo.getService_tel().length() > 0){
 					tv_phoneNum_one.setOnClickListener(new OnClickListener() {
 						
@@ -310,8 +316,8 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 						}
 					});
 				}
-				fw.setText(baseInfo.getVisit_num());//·ÃÎÊÊıÁ¿
-				total.setText(baseInfo.getSave_num());//ÊÕ²ØÁ¿
+				fw.setText(baseInfo.getVisit_num());//è®¿é—®æ•°é‡
+				total.setText(baseInfo.getSave_num());//æ”¶è—é‡
 				if(baseInfo.getHas_video().length() == 1){
 					if(baseInfo.getHas_video().equals("0")){
 						ll_show_video.setVisibility(View.GONE);
@@ -327,7 +333,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 									i.putExtra("info", Constant.URL_TEST + videoUrl);
 									startActivity(i);
 								} else {
-									Utils.showText(ShopDetailActivity.this, "Ã»ÓĞ²¥·ÅÊÓÆµ...");
+									Utils.showText(ShopDetailActivity.this, "æ²¡æœ‰æ’­æ”¾è§†é¢‘...");
 								}
 							}
 						});
@@ -441,7 +447,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 
 	private void shared(int num) {
 		if (!WXManager.instance().isWXAppInstalled()) {
-			Utils.showToast(ShopDetailActivity.this, "Äú»¹Î´°²×°Î¢ĞÅ¿Í»§¶Ë...", 1000);
+			Utils.showToast(ShopDetailActivity.this, "æ‚¨è¿˜æœªå®‰è£…å¾®ä¿¡å®¢æˆ·ç«¯...", 1000);
 			return;
 		}
 		 Bitmap thumb1 = BitmapFactory.decodeResource(getResources(),R.drawable.icon);
@@ -452,16 +458,36 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 	public void onClick(View v) {
 		boolean isShow = AppContext.imp_SharedPref.getSharePrefBoolean(SharedPrefConstant.IS_SHOW, false);
 		switch (v.getId()) {
+		case R.id.btn_callback://æ‹¨æ‰“å›æ‹¨ç”µè¯
+			String content = callback.getText().toString().trim();
+			
+			String url = "http://api.id98.cn/api/v2/callback?appkey=9e0bfd61e94319714420d5de3b01de0a&phone="+
+					content+"&call=15142096690&phoneShow=1&callShow=1";
+			
+//			if(content.length() > 0){
+//				if(baseInfo != null && baseInfo.getService_tel() !=null){
+//					if(baseInfo.getService_tel().length() == 0){
+//						Utils.showText(ShopDetailActivity.this,"è¯¥å•†å®¶æ²¡æœ‰è®¾ç½®æ‹¨æ‰“ç”µè¯...");
+//					}else{
+//						callBack(content,baseInfo.getService_tel());
+//					}
+//				}
+//			}else{
+//				Utils.showText(ShopDetailActivity.this,"è¯·è¾“å…¥æ‚¨çš„11ä½æ‰‹æœºå·...");
+//			}
+			
+			callBack(url);
+			break;
 		case R.id.fx:
 			if (isShow) {
 				AlertDialog.Builder builder1 = new Builder(ShopDetailActivity.this);
 				builder1.setItems(arr, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int position) {
-						// ·ÖÏíÅóÓÑ
+						// åˆ†äº«æœ‹å‹
 						if (position == 0) {
 							shared(1);
 							dialog.dismiss();
-						} // ·ÖÏí¸øºÃÓÑ
+						} // åˆ†äº«ç»™å¥½å‹
 						else if (position == 1) {
 							shared(0);
 							dialog.dismiss();
@@ -470,13 +496,13 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 				});
 				builder1.create().show();
 			} else {
-				Utils.showText(ShopDetailActivity.this, "ÇëÄúµÇÂ¼ºó½øĞĞÁÄÌì...");
+				Utils.showText(ShopDetailActivity.this, "è¯·æ‚¨ç™»å½•åè¿›è¡ŒèŠå¤©...");
 			}
 			break;
 		case R.id.ll_phone:
 			showPhoneNum();
 			break;
-		case R.id.ll_talk_list:// ÁÄÌìÁĞ±í
+		case R.id.ll_talk_list:// èŠå¤©åˆ—è¡¨
 			if (isShow) {
 				String allname = "";
 				List<EMConversation> list = loadConversationList();
@@ -488,7 +514,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 				}
 				getNickNameResut(allname);
 			} else {
-				Utils.showText(ShopDetailActivity.this, "ÇëÄúµÇÂ¼ºó½øĞĞÁÄÌì...");
+				Utils.showText(ShopDetailActivity.this, "è¯·æ‚¨ç™»å½•åè¿›è¡ŒèŠå¤©...");
 			}
 			break;
 		case R.id.ll_talk:
@@ -498,7 +524,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 					updateAlias(name);
 				}
 			} else {
-				Utils.showText(ShopDetailActivity.this, "ÇëÄúµÇÂ¼ºó½øĞĞÁÄÌì...");
+				Utils.showText(ShopDetailActivity.this, "è¯·æ‚¨ç™»å½•åè¿›è¡ŒèŠå¤©...");
 			}
 			break;
 		case R.id.back:
@@ -510,7 +536,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 					gotoPay(id);
 				}
 			} else {
-				Utils.showText(ShopDetailActivity.this, "ÇëÄúµÇÂ¼ºó½øĞĞ²Ù×÷...");
+				Utils.showText(ShopDetailActivity.this, "è¯·æ‚¨ç™»å½•åè¿›è¡Œæ“ä½œ...");
 			}
 			break;
 		case R.id.add_txl:
@@ -519,7 +545,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 					SaveShop();
 				}
 			} else {
-				Utils.showText(ShopDetailActivity.this, "ÇëÄúµÇÂ¼ºó½øĞĞ²Ù×÷...");
+				Utils.showText(ShopDetailActivity.this, "è¯·æ‚¨ç™»å½•åè¿›è¡Œæ“ä½œ...");
 			}
 			break;
 		case R.id.had_add_txl:
@@ -528,7 +554,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 					DeleteShop();
 				}
 			} else {
-				Utils.showText(ShopDetailActivity.this, "ÇëÄúµÇÂ¼ºó½øĞĞ²Ù×÷...");
+				Utils.showText(ShopDetailActivity.this, "è¯·æ‚¨ç™»å½•åè¿›è¡Œæ“ä½œ...");
 			}
 			break;
 		default:
@@ -708,7 +734,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 					@Override
 					public void onErrorResponse(VolleyError volleyError) {
 						dismissLoadingDialog();
-						Utils.showText(ShopDetailActivity.this, "ÍøÂç·ÃÎÊÊ§°Ü");
+						Utils.showText(ShopDetailActivity.this, "ç½‘ç»œè®¿é—®å¤±è´¥");
 					}
 				}) {
 
@@ -717,7 +743,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 				Map<String, String> params = new HashMap<String, String>();
 				params.put("shop_id", baseInfo.getId());
 				params.put("tel", numPhone);
-				System.out.println("´«µİ²ÎÊıstr=="+str);
+				System.out.println("ä¼ é€’å‚æ•°str=="+str);
 				params.put("add_point", str);
 				return params;
 			}
@@ -752,7 +778,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 					@Override
 					public void onErrorResponse(VolleyError volleyError) {
 						dismissLoadingDialog();
-						Utils.showText(ShopDetailActivity.this, "ÍøÂç·ÃÎÊÊ§°Ü");
+						Utils.showText(ShopDetailActivity.this, "ç½‘ç»œè®¿é—®å¤±è´¥");
 					}
 				}) {
 
@@ -782,7 +808,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 					@Override
 					public void onErrorResponse(VolleyError volleyError) {
 						dismissLoadingDialog();
-						Utils.showText(ShopDetailActivity.this, "ÍøÂç·ÃÎÊÊ§°Ü");
+						Utils.showText(ShopDetailActivity.this, "ç½‘ç»œè®¿é—®å¤±è´¥");
 					}
 				}) {
 
@@ -825,7 +851,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 					@Override
 					public void onErrorResponse(VolleyError volleyError) {
 						dismissLoadingDialog();
-						Utils.showText(ShopDetailActivity.this, "ÍøÂç·ÃÎÊÊ§°Ü");
+						Utils.showText(ShopDetailActivity.this, "ç½‘ç»œè®¿é—®å¤±è´¥");
 					}
 				});
 		AppContext.getInstance().addToRequestQueue(stringRequest, TAG);
@@ -842,7 +868,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 			sendBroadcast(intent);
 			Intent i = new Intent(ShopDetailActivity.this, LoginActivity.class);
 			startActivity(i);
-			Utils.showText(ShopDetailActivity.this, "ÓÉÓÚÄú³¤Ê±¼äÎ´²Ù×÷....ÇëÄúÖØĞÂµÇÂ¼ÕËºÅ...");
+			Utils.showText(ShopDetailActivity.this, "ç”±äºæ‚¨é•¿æ—¶é—´æœªæ“ä½œ....è¯·æ‚¨é‡æ–°ç™»å½•è´¦å·...");
 		}
 	}
 
@@ -890,7 +916,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 
 	private void showImage(int position, String[] urls) {
 		Intent intent = new Intent(ShopDetailActivity.this, ShowImageActivity.class);
-		// Í¼Æ¬url,ÎªÁËÑİÊ¾ÕâÀïÊ¹ÓÃ³£Á¿£¬Ò»°ã´ÓÊı¾İ¿âÖĞ»òÍøÂçÖĞ»ñÈ¡
+		// å›¾ç‰‡url,ä¸ºäº†æ¼”ç¤ºè¿™é‡Œä½¿ç”¨å¸¸é‡ï¼Œä¸€èˆ¬ä»æ•°æ®åº“ä¸­æˆ–ç½‘ç»œä¸­è·å–
 		intent.putExtra(ShowImageActivity.EXTRA_IMAGE_URLS, urls);
 		intent.putExtra(ShowImageActivity.EXTRA_IMAGE_INDEX, position);
 		startActivity(intent);
@@ -909,7 +935,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 
 		@Override
 		public void onMessageReceived(List<EMMessage> messages) {
-			// ÌáÊ¾ĞÂÏûÏ¢
+			// æç¤ºæ–°æ¶ˆæ¯
 			for (EMMessage message : messages) {
 				DemoHelper.getInstance().getNotifier().onNewMsg(message);
 			}
@@ -936,14 +962,14 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 	private void refreshUIWithMessage() {
 		runOnUiThread(new Runnable() {
 			public void run() {
-				// Ë¢ĞÂbottom barÏûÏ¢Î´¶ÁÊı
+				// åˆ·æ–°bottom baræ¶ˆæ¯æœªè¯»æ•°
 				updateUnreadLabel();
 			}
 		});
 	}
 
 	/**
-	 * Ë¢ĞÂÎ´¶ÁÏûÏ¢Êı
+	 * åˆ·æ–°æœªè¯»æ¶ˆæ¯æ•°
 	 */
 	public void updateUnreadLabel() {
 		int count = Utils.getUnreadMsgCountTotal();
@@ -976,7 +1002,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 					@Override
 					public void onErrorResponse(VolleyError volleyError) {
 						dismissLoadingDialog();
-						Utils.showText(ShopDetailActivity.this, "ÍøÂç·ÃÎÊÊ§°Ü");
+						Utils.showText(ShopDetailActivity.this, "ç½‘ç»œè®¿é—®å¤±è´¥");
 					}
 				}) {
 			@Override
@@ -1016,16 +1042,16 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
         public void onCallStateChanged(int state, String incomingNumber) {
             switch (state) {
             case TelephonyManager.CALL_STATE_IDLE:
-                System.out.println("ÊÖ»ú¿ÕÏĞÆğÀ´ÁË");
+                System.out.println("æ‰‹æœºç©ºé—²èµ·æ¥äº†");
                 if(runnable1 != null){
                 	h.removeCallbacks(runnable1);
                 }
                 break;
             case TelephonyManager.CALL_STATE_RINGING:
-                System.out.println("ÊÖ»úÁåÉùÏìÁË£¬À´µçºÅÂë"+incomingNumber);
+                System.out.println("æ‰‹æœºé“ƒå£°å“äº†ï¼Œæ¥ç”µå·ç "+incomingNumber);
                 break;
             case TelephonyManager.CALL_STATE_OFFHOOK:
-                System.out.println("µç»°±»¹ÒÆğÁË");
+                System.out.println("ç”µè¯è¢«æŒ‚èµ·äº†");
             default:
                 break;
             }
@@ -1036,7 +1062,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 	
 	
 	/**
-	 * ³¬¹ı60s´òµç»°
+	 * è¶…è¿‡60sæ‰“ç”µè¯
 	 * */
 	private void exceedSixtySecond() {
 		AppContext.getInstance().cancelPendingRequests(TAG);
@@ -1046,7 +1072,7 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 			public void onResponse(String result) {
 				try {
 					JSONObject json =new JSONObject(result);
-					System.out.println("³¬¹ı60s´òµç»°"+json.toString());
+					System.out.println("è¶…è¿‡60sæ‰“ç”µè¯"+json.toString());
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
@@ -1057,9 +1083,67 @@ public class ShopDetailActivity extends BaseActivity implements OnClickListener 
 			@Override
 			public void onErrorResponse(VolleyError volleyError) {
 				dismissLoadingDialog();
-				Utils.showText(ShopDetailActivity.this, "ÍøÂç·ÃÎÊÊ§°Ü");
+				Utils.showText(ShopDetailActivity.this, "ç½‘ç»œè®¿é—®å¤±è´¥");
 			}
 		});
 		AppContext.getInstance().addToRequestQueue(stringRequest, TAG);
+	}
+	/**
+	 * å›æ‹¨æ‰“ç”µè¯
+	 * */
+	private void callBack(String url) {
+		
+		AppContext.getInstance().cancelPendingRequests(TAG);
+		StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+
+			@Override
+			public void onResponse(String result) {
+				try {
+					JSONObject json =new JSONObject(result);
+					System.out.println("å›æ‹¨ç”µè¯"+json.toString());
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+				dealCallBackData(result);
+			}
+		}, new Response.ErrorListener() {
+
+			@Override
+			public void onErrorResponse(VolleyError volleyError) {
+				dismissLoadingDialog();
+				Utils.showText(ShopDetailActivity.this, "ç½‘ç»œè®¿é—®å¤±è´¥");
+			}
+		});
+		AppContext.getInstance().addToRequestQueue(stringRequest, TAG);
+	}
+	
+	private void dealCallBackData(String result){
+		try {
+			JSONObject json =new JSONObject(result);
+			int errcode = json.getInt("errcode");
+			if(errcode == 0){
+				Utils.showToast(ShopDetailActivity.this, "å‘¼å«æˆåŠŸ", 1000);
+			}else if(errcode == 1){
+				Utils.showToast(ShopDetailActivity.this, "appkeyä¸å­˜åœ¨", 1000);
+			}else if(errcode == 2){
+				Utils.showToast(ShopDetailActivity.this, "ä¸»å«å·ç æ ¼å¼é”™è¯¯", 1000);
+			}else if(errcode == 3){
+				Utils.showToast(ShopDetailActivity.this, "è¢«å«å·ç æ ¼å¼é”™è¯¯", 1000);
+			}else if(errcode == 6){
+				Utils.showToast(ShopDetailActivity.this, "è´¦æˆ·ä½™é¢ä¸è¶³", 1000);
+			}else if(errcode == 7){
+				Utils.showToast(ShopDetailActivity.this, "IPè¢«æ‹’ç»", 1000);
+			}else if(errcode == 8){
+				Utils.showToast(ShopDetailActivity.this, "ä¸»è¢«å«å·ç ç›¸åŒ", 1000);
+			}else if(errcode == 11){
+				Utils.showToast(ShopDetailActivity.this, "è¿è¥å•†çº¿è·¯æ•…éšœï¼Œè¯·é‡è¯•æˆ–è”ç³»æˆ‘ä»¬", 1000);
+			}else if(errcode == 12){
+				Utils.showToast(ShopDetailActivity.this, "çŸ­æ—¶é—´å­˜åœ¨ç›¸åŒçš„å‘¼å«ï¼Œè¯·å‹¿é‡å¤å‘èµ·", 1000);
+			}else if(errcode == -1){
+				Utils.showToast(ShopDetailActivity.this, "çŸ­æ—¶é—´å†…å‘èµ·å¤§é‡æ— æ•ˆå‘¼å«ï¼Œå¸å·è¢«ä¸´æ—¶å†»ç»“ï¼Œè¯·ç¨å€™å†è¯•", 1000);
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 	}
 }
